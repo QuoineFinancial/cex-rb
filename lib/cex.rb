@@ -2,7 +2,7 @@ require "cex/version"
 require "cex/net"
 require "cex/model"
 require "cex/orders"
-require "cex/executions"
+require "cex/transactions"
 require "cex/balances"
 
 module Cex
