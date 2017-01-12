@@ -1,6 +1,22 @@
 require "virtus"
 
 module Cex
+  class Transaction
+    include Virtus.value_object
+
+    values do
+      attribute :id, String
+      attribute :type, String
+      attribute :time, String
+      attribute :user, String
+      attribute :amount, Decimal
+      attribute :balance, Decimal
+      attribute :symbol, String
+      attribute :order, String
+      attribute :fee, Decimal
+    end
+  end
+
   class Order
     include Virtus.value_object
 
@@ -19,23 +35,7 @@ module Cex
       attribute :remains, Decimal
       attribute :trading_fee_marker, Decimal
       attribute :trading_fee_taker, Decimal
-      attribute :transactions, Array[Transaction]
-    end
-  end
-
-  class Transaction
-    include Virtus.value_object
-
-    values do
-      attribute :id, String
-      attribute :type, String
-      attribute :time, String
-      attribute :user, String
-      attribute :amount, Decimal
-      attribute :balance, Decimal
-      attribute :symbol, String
-      attribute :order, String
-      attribute :fee, Decimal
+      attribute :transactions, Array[Cex::Transaction]
     end
   end
 

@@ -7,7 +7,7 @@ require 'base64'
 module Cex
   module Net
     def self.to_uri(path)
-      return "https://cex.io/api#{path}"
+      "https://cex.io/api#{path}"
     end
 
     def self.get(path, options = {}, private_api = false)
