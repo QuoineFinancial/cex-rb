@@ -22,9 +22,13 @@ module Cex
     def self.post(path, options = {})
       begin
         nonce = (Time.now.to_f * 10000).to_i.to_s
-        signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest::Digest.new('sha256'), Cex.secret, nonce + Cex.username + Cex.key)
+        signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new("sha256"), Cex.secret, nonce + Cex.username + Cex.key)
         options.merge!(nonce: nonce, key: Cex.key, signature: signature)
-        RestClient.post(self.to_uri(path), options.to_json)
+        header = {
+          "Content-Type" => "application/json",
+          "Accept" => "application/json"
+        }
+        RestClient.post(self.to_uri(path), options.to_json, header)
       rescue Exception => e
         raise BadRequest.new(e.response)
       end
