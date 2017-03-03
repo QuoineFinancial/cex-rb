@@ -5,8 +5,9 @@ module Cex
       result = Cex::Net.post("/get_order_tx/", options)
       result = JSON.parse(result)
       return unless result["ok"]
-
-      Cex::Order.new(result["data"], transactions: result["data"]["vtx"])
+      order = Cex::Order.new(result["data"])
+      order.transactions = result["data"]["vtx"]
+      order
     end
   end
 end

@@ -18,7 +18,7 @@ module Cex
   end
 
   class Order
-    include Virtus.value_object
+    include Virtus.model
 
     values do
       attribute :id, String
