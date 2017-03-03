@@ -36,6 +36,7 @@ module Cex
       attribute :remains, Decimal
       attribute :tradingFeeMaker, Decimal
       attribute :tradingFeeTaker, Decimal
+      attribute :fee_amount, Decimal
       attribute :transactions, Array[Cex::Transaction]
     end
 
