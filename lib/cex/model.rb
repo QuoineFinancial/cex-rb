@@ -14,6 +14,7 @@ module Cex
       attribute :symbol, String
       attribute :order, String
       attribute :fee, Decimal
+      attribute :price, Decimal
     end
   end
 
