@@ -2,7 +2,7 @@ require "virtus"
 
 module Cex
   class Transaction
-    include Virtus.value_object
+    include Virtus.model
 
     values do
       attribute :id, String
@@ -33,9 +33,17 @@ module Cex
       attribute :fa_usd, Decimal
       attribute :ta_usd, Decimal
       attribute :remains, Decimal
-      attribute :trading_fee_marker, Decimal
-      attribute :trading_fee_taker, Decimal
+      attribute :tradingFeeMaker, Decimal
+      attribute :tradingFeeTaker, Decimal
       attribute :transactions, Array[Cex::Transaction]
+    end
+
+    def trading_fee_maker
+      self.tradingFeeMaker
+    end
+
+    def trading_fee_taker
+      self.tradingFeeTaker
     end
   end
 
