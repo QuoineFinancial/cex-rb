@@ -26,6 +26,7 @@ module Cex
       attribute :id, String
       attribute :timestamp, Integer
       attribute :type, String
+      attribute :status, String
       attribute :price, Decimal
       attribute :amount, Decimal
       attribute :pending, Decimal
