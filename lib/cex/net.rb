@@ -21,7 +21,7 @@ module Cex
 
     def self.post(path, options = {})
       begin
-        nonce = (Time.now.to_f * 10000).to_i.to_s
+        nonce = (Time.now.to_f * 1_000_000_000).to_i.to_s
         signature = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new("sha256"), Cex.secret, nonce + Cex.username + Cex.key)
         options.merge!(nonce: nonce, key: Cex.key, signature: signature)
         header = {
@@ -35,7 +35,7 @@ module Cex
     end
 
     def self.nonce
-      (Time.now.to_f * 10000).to_i.to_s
+      (Time.now.to_f * 1_000_000_000).to_i.to_s
     end
 
     class BadRequest < RuntimeError; end
