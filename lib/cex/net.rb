@@ -1,8 +1,7 @@
 require "rest_client"
 require "net/http"
-require 'digest/hmac'
-require 'digest/sha2'
 require 'base64'
+require 'openssl'
 
 module Cex
   module Net
