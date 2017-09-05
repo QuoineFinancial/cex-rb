@@ -10,5 +10,10 @@ module Cex
       Cex.sanity_check!
       Cex::Net.post("/cancel_order/", options)
     end
+
+    def self.cancel_all
+      Cex.sanity_check!
+      Cex::Net.post("/cancel_orders/BTC/USD")
+    end
   end
 end
