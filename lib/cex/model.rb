@@ -90,13 +90,7 @@ module Cex
       attribute :symbol2, String
       attribute :amount, String
       attribute :price, String
-      attribute :fa:USD, String
-      attribute :ta:USD, String
       attribute :remains, String
-      attribute :a:BTC:cds, String
-      attribute :a:USD:cds, String
-      attribute :f:USD:cds, String
-      attribute :f:USD:cds, String
       attribute :tradingFeeMaker, String
       attribute :tradingFeeTaker, String
       attribute :orderId, String
