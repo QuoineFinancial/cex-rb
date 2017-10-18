@@ -97,5 +97,3 @@ module Cex
     end
   end
 end
-
-
