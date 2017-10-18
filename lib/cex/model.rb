@@ -59,4 +59,41 @@ module Cex
       attribute :bonus, Decimal
     end
   end
+
+  class OpenOrder 
+    include Virtus.model
+
+    values do
+      attribute :id, String
+      attribute :time, Integer
+      attribute :type, String
+      attribute :price, Decimal
+      attribute :amount, Decimal
+      attribute :pending, Decimal
+      attribute :symbol1, String
+      attribute :symbol2, String
+    end
+  end
+
+  class ArchivedOrder 
+    include Virtus.model
+
+    values do
+      attribute :id, String
+      attribute :type, String
+      attribute :time, Integer
+      attribute :lastTxTime, Decimal
+      attribute :lastTx, Decimal
+      attribute :status, Decimal
+      attribute :pending, Decimal
+      attribute :symbol1, String
+      attribute :symbol2, String
+      attribute :amount, String
+      attribute :price, String
+      attribute :remains, String
+      attribute :tradingFeeMaker, String
+      attribute :tradingFeeTaker, String
+      attribute :orderId, String
+    end
+  end
 end
